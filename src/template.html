@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Markdown</title>
+
+    <link rel="stylesheet" href="./static/a11y-light.min.css" />
+    <link rel="stylesheet" href="./static/github-markdown.min.css" />
+    <script defer src="./static/highlight.min.js"></script>
+
+    <style>
+      html,
+      body {
+        font-family:
+          "Noto Sans SC", "Microsoft YaHei", "PingFang SC", sans-serif;
+      }
+
+      /* PDF 页面边距 */
+      @page {
+        margin: 18mm 16mm;
+      }
+
+      /* TOC 样式 */
+      .markdown-body nav.table-of-contents {
+        margin: 16px 0 24px;
+        padding: 12px 14px;
+        border: 1px solid #e5e7eb;
+        border-left: 4px solid #3b82f6;
+        background: #f8fafc;
+        border-radius: 8px;
+      }
+      .markdown-body nav.table-of-contents::before {
+        content: "目录";
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: #111827;
+        margin-bottom: 8px;
+      }
+      .markdown-body nav.table-of-contents ol {
+        margin: 0;
+        padding-left: 18px;
+      }
+      .markdown-body nav.table-of-contents li {
+        margin: 4px 0;
+        line-height: 1.6;
+      }
+      .markdown-body nav.table-of-contents a {
+        color: #1f2937;
+        text-decoration: none;
+        border-bottom: 1px dotted #9ca3af;
+        padding-bottom: 1px;
+      }
+      .markdown-body nav.table-of-contents a:hover {
+        color: #2563eb;
+        border-bottom-color: #2563eb;
+      }
+
+      pre {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    </style>
+  </head>
+
+  <body>
+    <article class="markdown-body">{{content}}</article>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (!window.hljs) return;
+        document.querySelectorAll("pre > code").forEach(function (code) {
+          code.classList.add("hljs");
+        });
+        hljs.highlightAll();
+      });
+    </script>
+  </body>
+</html>

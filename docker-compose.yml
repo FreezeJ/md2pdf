@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  md2pdf:
+    build: .
+    container_name: md2pdf-service
+    ports:
+      - "3000:3000"
+    environment:
+      - BEARER_TOKEN=d5dea055ef9e849164435cf13a75152a
+    restart: unless-stopped
+    user: pwuser
+    working_dir: /home/pwuser

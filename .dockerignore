@@ -1,0 +1,13 @@
+node_modules
+npm-debug.log
+download/
+*.pdf
+.git
+.gitignore
+index.test.js
+jest.config.js
+Dockerfile
+docker-compose.yml
+.dockerignore
+tests
+example
