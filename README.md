@@ -1,10 +1,10 @@
-# MCP Markdown to PDF Service
+# Markdown to PDF Service
 
 一个基于 Node.js 和 Playwright 的 Markdown 转 PDF 服务，提供 RESTful API 接口，支持将 Markdown 文档转换为高质量的 PDF 文件。
 
 ## 项目描述
 
-MCP Markdown to PDF Service 是一个轻量级的 Web 服务，专门用于将 Markdown 文档转换为 PDF 格式。该服务具有以下特点：
+Markdown to PDF Service 是一个轻量级的 Web 服务，专门用于将 Markdown 文档转换为 PDF 格式，并且提供下载地址。该服务具有以下特点：
 
 - **高质量转换**：使用 Playwright 和 Chromium 渲染引擎，确保 PDF 输出质量
 - **Markdown 增强**：支持目录生成、锚点链接、语法高亮等 Markdown 扩展功能
