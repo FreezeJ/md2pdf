@@ -17,7 +17,6 @@ Markdown to PDF Service 是一个轻量级的 Web 服务，专门用于将 Markd
 ### 主要功能
 
 - Markdown 到 PDF 的实时转换
-- 支持大型 Markdown 文件（最大 50MB）
 - 自动生成目录和章节锚点
 - 代码语法高亮支持
 - 临时下载链接管理
@@ -51,7 +50,7 @@ docker-compose down
 ```
 
 Docker Compose 配置说明：
-- **服务端口**：8089（映射到容器内的 3000 端口）
+- **服务端口**：3000（映射到容器内的 3000 端口）
 - **认证令牌**：请手动修改，避免使用默认token
 - **重启策略**：除非手动停止，否则自动重启
 - **用户权限**：使用 pwuser 用户运行，提高安全性
@@ -66,7 +65,7 @@ Docker Compose 配置说明：
 
 **请求示例**：
 ```bash
-curl --location --request POST 'http://127.0.0.1:8089/render' \
+curl --location --request POST 'http://127.0.0.1:3000/render' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer d5dea055ef9e849164435cf13a75152a' \
 --data-raw '{"markdown": "# Hello\n## Hello"}'
@@ -78,7 +77,7 @@ curl --location --request POST 'http://127.0.0.1:8089/render' \
   "code": 0,
   "msg": "PDF 生成成功",
   "data": {
-    "downloadUrl": "http://127.0.0.1:8089/download/7619b8ba577cde42.pdf?token=bca0582c8fe9f432c2d4f29242838713",
+    "downloadUrl": "http://127.0.0.1:3000/download/7619b8ba577cde42.pdf?token=bca0582c8fe9f432c2d4f29242838713",
     "expiresIn": 300
   }
 }
@@ -135,7 +134,7 @@ mcp-md2pdf/
 ### 常见问题
 
 1. **容器启动失败**
-   - 检查端口 8089 是否被占用
+   - 检查端口 3000 是否被占用
    - 确认 Docker 服务正常运行
 
 2. **PDF 转换失败**
