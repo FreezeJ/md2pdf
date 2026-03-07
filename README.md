@@ -68,7 +68,7 @@ Docker Compose 配置说明：
 curl --location --request POST 'http://127.0.0.1:3000/render' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer d5dea055ef9e849164435cf13a75152a' \
---data-raw '{"markdown": "# Hello\n## Hello"}'
+--data '{"markdown": "# Hello\n## Hello"}'
 ```
 
 **响应示例**：
@@ -143,5 +143,3 @@ mcp-md2pdf/
 
 3. **下载链接失效**
    - 下载链接有效期有限，请重新转换获取新链接
-
-
