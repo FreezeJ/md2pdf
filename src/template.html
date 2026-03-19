@@ -9,19 +9,88 @@
     <link rel="stylesheet" href="./static/github-markdown.min.css" />
     <script defer src="./static/highlight.min.js"></script>
 
-    <style>
-      html,
-      body {
-        font-family:
-          "Noto Sans SC", "Microsoft YaHei", "PingFang SC", sans-serif;
-      }
-
-      /* PDF 页面边距 */
-      @page {
-        margin: 18mm 16mm;
-      }
-
-      /* TOC 样式 */
+        <style>
+        @page { margin: 15mm; size: A4; }
+        * { box-sizing: border-box; }
+        body {
+            font-family: "Noto Sans CJK SC", "Noto Color Emoji", "Segoe UI Emoji", "Apple Color Emoji", "WenQuanYi Zen Hei", "WenQuanYi Micro Hei", "Microsoft YaHei", "PingFang SC", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #2c3e50;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            page-break-after: avoid;
+            font-weight: 600;
+        }
+        h1 { font-size: 20px; border-bottom: 2px solid #3498db; padding-bottom: 8px; }
+        h2 { font-size: 16px; border-bottom: 1px solid #bdc3c7; padding-bottom: 6px; }
+        h3 { font-size: 14px; }
+        p { margin: 10px 0; text-align: justify; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            page-break-inside: auto;
+            table-layout: fixed;
+            font-size: 11px;
+        }
+        thead { display: table-header-group; page-break-inside: avoid; }
+        tr { page-break-inside: avoid; page-break-after: auto; }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: left;
+            vertical-align: top;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            line-height: 1.5;
+        }
+        th { background: #f8f9fa; font-weight: 600; color: #2c3e50; }
+        tr:nth-child(even) { background: #fafbfc; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: "Consolas", "Monaco", "Courier New", monospace;
+            font-size: 0.9em;
+            word-wrap: break-word;
+        }
+        pre {
+            background: #f8f8f8;
+            padding: 12px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 3px solid #3498db;
+            page-break-inside: avoid;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #3498db;
+            margin: 10px 0;
+            padding: 10px 15px;
+            color: #555;
+            background: #f8f9fa;
+            page-break-inside: avoid;
+        }
+        img { max-width: 100%; height: auto; page-break-inside: avoid; }
+        a { color: #3498db; text-decoration: none; word-wrap: break-word; }
+        ul, ol { padding-left: 25px; margin: 10px 0; }
+        li { margin: 5px 0; line-height: 1.5; }
+        hr { border: none; border-top: 1px solid #eee; margin: 20px 0; }
+        @media print {
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+              /* TOC 样式 */
       .markdown-body nav.table-of-contents {
         margin: 16px 0 24px;
         padding: 12px 14px;
