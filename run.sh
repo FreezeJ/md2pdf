@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# 获取脚本所在的目录
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-cd "$SCRIPT_DIR"
-mkdir -p download
+mkdir -p download # 创建下载目录
 chown -R 2048:109 download  # 2048:109 是容器 pwuser 用户的 UID 和 GID
 
 # 命令处理逻辑
