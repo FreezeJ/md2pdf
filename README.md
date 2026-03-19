@@ -41,14 +41,14 @@ git clone https://github.com/FreezeJ/md2pdf.git
 cd md2pdf
 
 # 创建下载目录并设置权限
-mkdir -p downloads
-chown -R 2048:109 downloads  # 2048:109 是容器 pwuser 用户的 UID 和 GID
+mkdir -p download
+chown -R 2048:109 download  # 2048:109 是容器 pwuser 用户的 UID 和 GID
 
 # 修改环境变量
 # 建议修改 BEARER_TOKEN 为自定义值，提高安全性
 # 建议修改 PORT 为自定义值，避免与其他服务冲突
 sed -i 's/BEARER_TOKEN=d5dea055ef9e849164435cf13a75152a/BEARER_TOKEN=your_custom_token/' docker-compose.yml
-sed -i 's/PORT=3000/PORT=your_custom_port/' docker-compose.yml
+sed -i 's/3000:3000/your_custom_port:3000/' docker-compose.yml
 
 # 构建镜像并后台启动服务
 docker-compose up -d --build

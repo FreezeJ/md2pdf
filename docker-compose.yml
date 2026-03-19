@@ -11,3 +11,5 @@ services:
     restart: unless-stopped
     user: pwuser
     working_dir: /home/pwuser
+    volumes:
+      - ./download:/home/pwuser/src/download

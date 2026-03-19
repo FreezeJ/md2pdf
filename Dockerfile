@@ -1,5 +1,7 @@
 # 使用 mcp/mcp-playwright 作为基础镜像
-FROM playwright/chrome:latest
+# 国内可能需要使用代理
+FROM docker.1ms.run/playwright/chrome:latest
+# FROM playwright/chrome:latest
 
 # 切换到 root 用户来设置 entrypoint.sh 的权限
 USER root
