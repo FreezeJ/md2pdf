@@ -81,7 +81,13 @@ async function generatePdfFromMarkdown(markdownContent) {
   // 写入临时 HTML 文件
   fs.writeFileSync(htmlPath, fullHtml);
 
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage', // 关键：避免 /dev/shm 容量不足导致崩溃
+    ],
+  });
   const page = await browser.newPage();
 
   // 跳转到本地 HTML 文件，确保外部资源可以加载
@@ -96,6 +102,7 @@ async function generatePdfFromMarkdown(markdownContent) {
     format: 'A4',
     printBackground: true,
     preferCSSPageSize: true,
+    timeout: 120000, // 设置超时为 2 分钟
   });
 
   await browser.close();
